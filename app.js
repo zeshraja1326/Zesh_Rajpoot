@@ -41,7 +41,7 @@ app.use(express.static('public')); // If we run this line it will not let the ap
 // Database End
 
 
- app.get('/home', function(request, response){
+ app.get('/', function(request, response){
     console.log('Hey there Its GET Request ');
     fs.readFile("public/index.html", function (error, pgResp) {
             if (error) {
