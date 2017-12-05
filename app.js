@@ -3,7 +3,8 @@
 var express = require('express');
 var fs = require('fs');
  var app = express();
- var port = 8080;
+ 
+ var port = process.env.PORT || 8000
 
 
 app.use(express.static('public')); // If we run this line it will not let the app.GET line run
