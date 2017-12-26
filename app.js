@@ -61,7 +61,7 @@ app.use(express.static('public')); // If we run this line it will not let the ap
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = {
-                message : "<div style= 'position: fixed;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px;'><h1>Resource Not Found !!!</h1><p>404</p></div>",
+                message : "<div style= 'position: fixed;top: 50%;left: 50%;margin-top: -50px;margin-left: -100px;'><h1>Resource Not Found !!!</h1></div>",
                 status: 404
             };
  
