@@ -41,8 +41,8 @@ app.use(express.static('public')); // If we run this line it will not let the ap
 
 // Database End
 
-
- app.get('/', function(request, response){
+// Process All requests in the URL no matter what querystring is comming
+ app.get( function(request, response){
     console.log('Hey there Its GET Request ');
     
             try 
