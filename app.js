@@ -41,8 +41,7 @@ app.use(express.static('public')); // If we run this line it will not let the ap
 
 // Database End
 
-// Process All requests in the URL no matter what querystring is comming
- app.get( function(request, response){
+ app.get( '/',function(request, response){
     console.log('Hey there Its GET Request ');
     
             try 
@@ -56,6 +55,23 @@ app.use(express.static('public')); // If we run this line it will not let the ap
                 response.end();
             }
 
+});
+
+// Process All requests in the URL no matter what querystring is comming
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = {
+                message : "<h1>Resource Not Found</h1> !!!",
+                status: 404
+            };
+  next(err);
+});
+
+// error handler
+app.use(function(err, req, res, next) {     
+                res.writeHead(err.status);
+                res.write(err.message);
+                res.end();
 });
 
  app.listen(port, function(){
